@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="container">
+    <h1>Nikkei News List</h1>
+    <p class='lead'>日経新聞のニュースを取得して表示するアプリケーション</p>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class='container'>
+    <p class="lead">ニュース</p>
+    {% for context in context_list %}
+    <div class="alert alert-primary" role="alert">
+        <p class="lead">
+            <a href={{ context.link }}>
+                {{ context.title }}
+            </a>
+        </p>
+        <p>{{ context.content }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
